@@ -11,27 +11,27 @@ public class LinkedList
 
     public int count()
     {
-        if (this.head == null)
+        if(this.head == null)
         {
             return 0;
         }
         int count = 1;
         Node currNode = this.head;
-        while (currNode.getNextNode() != null)
+        while(currNode.getNextNode() != null)
         {
             currNode = currNode.getNextNode();
             count++;
         }
-            return count;
-        }
+        return count;
+    }
 
-        public int getAtPos ( int pos)
+    public int getAtPos(int pos)
+    {
+        Node currNode = this.head;
+        for(int i = 0; i < pos; i++)
         {
-            Node currNode = this.head;
-            for(int i = 0; i < pos; i++);
-            {
-                currNode = currNode.getNextNode();
-            }
+            currNode = currNode.getNextNode();
+        }
         return currNode.getPayload();
     }
 
@@ -55,18 +55,17 @@ public class LinkedList
             return valToReturn;
         }
     }
-
     public void addEnd(int payload)
     {
         Node n = new Node(payload);
-        if (this.head == null)
+        if(this.head == null)
         {
             this.head = n;
         }
         else
-            {
+        {
             Node currPos = this.head;
-            while (currPos.getNextNode() != null)
+            while(currPos.getNextNode() != null)
             {
                 currPos = currPos.getNextNode();
             }
@@ -75,12 +74,12 @@ public class LinkedList
     }
 
     public int removeFront()
-        {
-            Node temp = this.head;
-            this.head = this.head.getNextNode();
-            temp.setNextNode(null);
-            return temp.getPayload();
-        }
+    {
+        Node temp = this.head;
+        this.head = this.head.getNextNode();
+        temp.setNextNode(null);
+        return temp.getPayload();
+    }
 
     public void addFront(int payload)
     {
@@ -105,7 +104,6 @@ public class LinkedList
         }
         else
         {
-            //difficulty stuff
             this.head.display();
         }
     }

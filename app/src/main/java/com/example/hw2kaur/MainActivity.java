@@ -1,7 +1,6 @@
 package com.example.hw2kaur;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;

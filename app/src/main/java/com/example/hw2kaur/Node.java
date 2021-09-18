@@ -5,6 +5,12 @@ public class Node
     private int payload;
     private Node nextNode;
 
+    public Node(int payload)
+    {
+        this.payload = payload;
+        this.nextNode = null;
+    }
+
     public void display()
     {
         System.out.print(this.payload + " -> ");
@@ -18,21 +24,18 @@ public class Node
         }
     }
 
-    public Node(int payload)
+    public int getPayload()
     {
-        this.payload = payload;
-        this.nextNode = null;
-    }
-
-    public int getPayload() {
         return payload;
     }
 
-    public Node getNextNode() {
+    public Node getNextNode()
+    {
         return nextNode;
     }
 
-    public void setNextNode(Node nextNode) {
+    public void setNextNode(Node nextNode)
+    {
         this.nextNode = nextNode;
     }
 }

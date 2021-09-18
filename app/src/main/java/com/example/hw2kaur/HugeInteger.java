@@ -1,7 +1,5 @@
 package com.example.hw2kaur;
 
-import java.util.logging.Handler;
-
 public class HugeInteger
 {
     private LinkedList theNumber;
@@ -12,7 +10,7 @@ public class HugeInteger
         this.theNumber = new LinkedList();
         this.stringRep = num;
 
-        for (int i = 0; i < num.length(); i++)
+        for(int i = 0; i < num.length(); i++)
         {
             this.theNumber.addFront(Integer.parseInt("" + num.charAt(i)));
         }
@@ -25,7 +23,7 @@ public class HugeInteger
 
     public HugeInteger add(HugeInteger i)
     {
-        //add this huge integer to i to produce a new huge integer
+        //will add THIS hugeInteger to i producing a new HugeInteger
         int carry = 0;
         int thisCount = this.theNumber.count();
         int thisPos = 0;
@@ -34,33 +32,35 @@ public class HugeInteger
 
         String answer = "";
 
-        while (thisPos < thisCount || iPos < iCount)
+        while(thisPos < thisCount || iPos < iCount)
         {
             int sum = 0;
-            if (thisPos < thisCount)
+            if(thisPos < thisCount)
             {
                 sum = sum + this.theNumber.getAtPos(thisPos);
                 thisPos++;
             }
-            if (iPos < iCount)
+
+            if(iPos < iCount)
             {
                 sum = sum + i.theNumber.getAtPos(iPos);
                 iPos++;
             }
 
             sum = sum + carry;
-            if (sum > 10)
+            if(sum > 10)
             {
                 carry = 1;
                 sum = sum - 10;
             }
             else
-                {
+            {
                 carry = 0;
-                }
+            }
             answer = sum + answer;
         }
 
+        //we have processed all of our values, check the carry bit
         if(carry == 1)
         {
             answer = carry + answer;
